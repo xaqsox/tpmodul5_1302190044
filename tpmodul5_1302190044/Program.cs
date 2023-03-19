@@ -8,18 +8,30 @@ namespace tpmodul5_1302190044
 {
     class Program
     {
-        public class HaloGeneric
-        {
-            public void SapaUser<T>(T ngaran)
-            {
-                Console.WriteLine("Oi!! " + ngaran);
-            }
 
-            static void Main(string[] args)
+        public class DataGeneric<T>
+        {
+            public T Data { get; set; }
+
+
+            public void PrintData()
             {
-                HaloGeneric halo = new HaloGeneric();
-                halo.SapaUser("Nama Panggilan : aqso"); /*1302190044*/
+                Console.WriteLine("Data tersimpan: " + Data);
+            }
+            public DataGeneric(T data)
+            {
+                Data = data;
+            }
+        }
+
+        public class MainClass
+        {
+            public static void Main()
+            {
+                DataGeneric<string> data = new DataGeneric<string>("1302190044//aqsa");
+                data.PrintData();
             }
         }
     }
+
 }
